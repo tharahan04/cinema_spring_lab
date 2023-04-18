@@ -1,10 +1,23 @@
 package com.example.cinema_spring_lab.models;
 
-public class Movie {
 
+import jakarta.persistence.*;
+
+@Entity(name = "movies")
+
+
+public class Movie {
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "title")
     private String title;
+
+    @Column(name = "rating")
     private double rating;
+
+    @Column(name = "duration")
     private int duration;
 
     public Movie(int id, String title, double rating, int duration){
